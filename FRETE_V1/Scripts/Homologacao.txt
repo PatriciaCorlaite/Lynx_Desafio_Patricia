@@ -1,0 +1,68 @@
+
+Criação de Produto (s)
+•	POST de um produto simples;
+CELMUL000377
+
+•	POST de um produto com uma variação;
+APOMUL00001
+
+•	POST de um produto com mais de uma variação;
+CALELG00001
+
+•	POST de um produto com especificação de tamanho na variação;
+CAPGEN00027
+
+•	POST de um produto com especificação de cor na variação;
+FRRBLK00002
+
+•	POST de um produto com especificação de tamanho e cor na variação;
+FURBLK00001
+
+•	POST de um produto com especificação de voltagem na variação;
+PROEPS00021
+
+•	POST de um produto com categoria
+CAMSAM00023
+
+•	PUT de estoque e preço de um produto;
+CAMSAM00023
+
+
+Criação de Pedido (s)
+•	POST de um pedido com um SKU;
+Alericanas-1489495502994
+
+•	POST de um pedido com um SKU e a quantidade superior a um;
+Submarino-1489495762386
+
+•	POST de um pedido com mais de um SKU;
+Shoptime-1489496093133
+
+•	POST de um pedido com mais de um SKU e a quantidade superior a um;
+Casasbahia-1489496153529
+
+•	POST de um pedido com status 'aprovado';
+Casasbahia-1489496153529
+
+•	POST de um pedido com status 'enviado' contendo código de rastreio e chave da Nfe
+Casasbahia-1489496153529
+
+•	POST de um pedido com status 'entregue' contendo código de rastreio e chave da Nfe
+Casasbahia-1489496153529
+
+•	POST de um pedido com status 'cancelado';
+Casasbahia-1489496153529
+
+•	GET consumindo o pedido da fila
+Get pedido Extra-1489496688935 na fila as 10:17 de hoje(14/03/2017)
+
+Para lhe auxiliar disponibilizamos dois materiais:
+
+•	Manualacesse: https://skyhub.gelato.io/
+
+•	Requisições acesse: https://skyhub.gelato.io/api-explorer/skyhub-api/versions/1.0//
+
+Para solicitar a homologação da Loja/Plataforma basta enviar um e-mail para suporte@skyhub.com.br com título de e-mail: API :: Nome da Loja/Plataforma :: Homologação
+
+
+

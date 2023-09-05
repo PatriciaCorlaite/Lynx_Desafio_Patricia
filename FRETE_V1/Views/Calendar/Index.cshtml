@@ -1,0 +1,102 @@
+﻿@model IEnumerable<MODEL.CalendarModel>
+<script src="~/Scripts/Techshop/Calendar.js"></script>
+<div class="row" onmouseover="horarioCerto()">
+    <div class="col-md-12 col-lg-12 col-xl-9">
+        <div class="card card-modern">
+            <div class="card-header">
+                <div class="card-actions">
+                    <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
+                </div>
+                <h2 id="title_calendar"></h2>
+            </div>
+            <div class="card-body">
+                <div class="btn-group d-flex" role="group">
+                    <a class="btn btn-default w-100" role="button" onclick="outroMes(-1)"><<</a>
+                    <a class="btn btn-default w-100" role="button" onclick="location.reload()">Hoje</a>
+                    <a class="btn btn-default w-100" role="button" onclick="outroMes(1)">>></a>
+                </div>
+                <br />
+                <table class="table table-no-more table-bordered table-striped mb-0" id="teste"></table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-3">
+        <div class="card card-modern">
+            <div class="card-header">
+                <div class="card-actions">
+                    <a href="#" class="card-action card-action-toggle" data-card-toggle=""></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="post" action="@Url.Action("GravarLembrete", "Calendar")" autocomplete="off">
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <select name="Categoria" onclick="categoria('@ViewBag.Permissao')" id="Categoria" class="form-control populate placeholder" data-plugin-options='{ "placeholder": "Categoria...", "allowClear": true }' required>
+                                <option value="">Categoria...</option>
+                                <option value="Reuniao">Reunião</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </span>
+                                <input type="date" class="form-control" name="DtInicio" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="far fa-clock"></i>
+                                </span>
+                                <input type="text" name="HrInicio" id="HrInicio" data-plugin-timepicker="" class="form-control" data-plugin-options="{ &quot;showMeridian&quot;: false }" required>
+                                <span class="input-group-text border-start-0 border-end-0 rounded-0">
+                                    até
+                                </span>
+                                <input type="text" name="HrFim" id="HrFim" data-plugin-timepicker="" class="form-control" data-plugin-options="{ &quot;showMeridian&quot;: false }" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sala" class="form-group"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <input name="Titulo" type="text" class="form-control" id="inputDefault" placeholder="Título..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <textarea name="Descricao" rows="3" type="text" class="form-control" id="textareaAutosize" placeholder="Descrição..." data-plugin-textarea-autosize></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <input name="Participantes" id="tags-input" placeholder="Participantes..." data-role="tagsinput" data-tag-class="badge badge-primary" class="form-control" value="" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" action="@Url.Action("ExcluirLembrete", "Calendar")">
+    <div id="detalhe" style="z-index: -999999; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%"></div>
+    <input type="text" name="Codigo" id="excluirLembrete" style="display:none" />
+</form>
